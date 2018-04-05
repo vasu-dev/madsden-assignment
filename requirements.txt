@@ -1,1 +1,2 @@
 imutils==0.4.6
+opencv==3.3.0
