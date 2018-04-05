@@ -16,4 +16,4 @@ def gender_classi(image):
 	net.setInput(blob)
 	detections = net.forward()
 
-	return detections
+	return np.argmax(detections)

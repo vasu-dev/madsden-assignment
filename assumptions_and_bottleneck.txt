@@ -1,0 +1,25 @@
+I have used mobilenet ssd(caffe model) for human detection using the opencv dnn module with is the latest integration in the recent version for opencv. It requires opencv>=3.1.0 with contrib_modules and will work with opencv==3.3.0 without the contrib module.
+
+For gender detection I have used a trained caffe model.
+
+
+Files Description:
+	
+deploy_gender.prototxt.txt 		 : gender classifier prototxt
+gender_net.caffemodel      		 : caffe model for gender classification
+MobileNetSSD_deploy.prototxt.txt : human detection prototxt
+MobileNetSSD_deploy.caffemodel 	 : SSD model for human detection(trained on Pascal VOC)
+appox_coordinates.py 			 : finds the approx coordinate of the person(needs to be improved upon)
+gender_detection.py 			 : used to find gender of the person
+object_detection_dnn_cv.py			 : main script to detect human and plot the top-view
+requirements.txt				 : additional python modules
+
+
+Assumptions : 
+
+	- the camera is able to capture the whole human being in a single frame
+	- the average height of human beings is : 168cm
+	- triangle equlity is valid : actual_distance = (actual_width*focal_length)/pixel_width_in_image
+
+To run:
+	python object_detection_dnn_cv.py
